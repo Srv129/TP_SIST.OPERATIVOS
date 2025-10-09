@@ -10,8 +10,8 @@ archivo CSV, mientras que N procesos generadores producen datos de prueba.
 Requisitos:
 
 • El programa debe permitir especificar por parámetro cantidad de procesos generadores y
-cantidad total de registros a generar.
-• Cada generador solicita al proceso coordinador los próximos 10 IDs válidos.
+cantidad total de registros a generar.\
+• Cada generador solicita al proceso coordinador los próximos 10 IDs válidos.\
 • Con cada ID, genera un registro con datos aleatorios (por ejemplo: valores tomados de listas
 predefinidas o números generados en un rango).
 • Cada registro es enviado de a uno por vez al coordinador mediante memoria compartida (SHM).
