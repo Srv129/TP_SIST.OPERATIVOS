@@ -1,4 +1,4 @@
-# TP_SIST.OPERATIVOS
+## TP_SIST.OPERATIVOS
 
 # Ejercicio 1: Generador de Datos de Prueba con Procesos y Memoria Compartida
 
