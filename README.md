@@ -1,6 +1,6 @@
 # TP_SIST.OPERATIVOS
 
-Ejercicio 1: Generador de Datos de Prueba con Procesos y Memoria Compartida
+# Ejercicio 1: Generador de Datos de Prueba con Procesos y Memoria Compartida
 
 Enunciado:
 Se debe desarrollar un sistema de generación de datos mediante procesos en paralelo.
