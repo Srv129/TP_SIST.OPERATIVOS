@@ -1,12 +1,14 @@
-## TP_SIST.OPERATIVOS
+# TP_SIST.OPERATIVOS
 
-# Ejercicio 1: Generador de Datos de Prueba con Procesos y Memoria Compartida
+## Ejercicio 1: Generador de Datos de Prueba con Procesos y Memoria Compartida
 
-Enunciado:
+**Enunciado:**
+
 Se debe desarrollar un sistema de generación de datos mediante procesos en paralelo.
 Un proceso coordinador administra la asignación de identificadores y la escritura de registros en un
 archivo CSV, mientras que N procesos generadores producen datos de prueba.
 Requisitos:
+
 • El programa debe permitir especificar por parámetro cantidad de procesos generadores y
 cantidad total de registros a generar.
 • Cada generador solicita al proceso coordinador los próximos 10 IDs válidos.
@@ -20,7 +22,9 @@ o Incluir obligatoriamente el ID como primer campo.
 o El resto de los campos pueden ser definidos libremente.
 • No es necesario que los IDs queden ordenados en el CSV; se registran en el orden en que son
 recibidos.
-Monitoreo en Linux:
+
+**Monitoreo en Linux:**
+
 • Uso de ipcs o /dev/shm, ps, htop, vmstat para evidenciar creación de procesos, memoria compartida
 y concurrencia.
 • Limpieza de recursos IPC al finalizar.
