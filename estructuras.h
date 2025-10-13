@@ -12,7 +12,7 @@
 #define SEM_SHM_VACIA_NAME "/sem_shm_vacia"
 #define SEM_SHM_LLENA_NAME "/sem_shm_llena"
 
-#define BLOQUE_IDS 1 // Se establece en 1 para garantizar la correlatividad estricta ID a ID
+#define BLOQUE_IDS 10
 
 // --- Estructuras de Datos Compartidas ---
 
@@ -23,17 +23,18 @@ typedef struct {
     char tiempo_generacion[20];
 } Registro;
 
-// Estructura de control para variables compartidas críticas
+// Estructura de control para variables compartidas crÃ­ticas
 typedef struct {
     long proximo_id;
     int registros_pendientes;
-    long id_esperado;       // <--- ESTA LÍNEA DEBE ESTAR AQUÍ
+    long id_esperado;       // <--- ESTA LÃNEA DEBE ESTAR AQUÃ
 } MemoriaControl;
 
-// Función auxiliar (Definición)
+// FunciÃ³n auxiliar (DefiniciÃ³n)
 void get_current_time_str(char *buffer, size_t size);
 
 
 #endif // ESTRUCTURAS_H_INCLUDED
+
 
 
