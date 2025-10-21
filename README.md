@@ -1,6 +1,6 @@
 # TP_SIST.OPERATIVOS
 
-##Pautas de desarrollo y entrega:\
+## Pautas de desarrollo y entrega:\
 • Debe estar desarrollado en C o C++
 • Se puede utilizar IA como herramienta para apoyo y/o generación del código
 • Entregar el código fuente y un makefile para poder compilarlo
