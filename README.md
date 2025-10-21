@@ -18,7 +18,7 @@ plataforma MIeL.
 ### Enunciado:
 Se debe desarrollar un sistema de generación de datos mediante procesos en paralelo.\
 Un proceso coordinador administra la asignación de identificadores y la escritura de registros en un
-archivo CSV, mientras que N procesos generadores producen datos de prueba.\
+archivo CSV, mientras que N procesos generadores producen datos de prueba.
 
 ### Requisitos:
 • El programa debe permitir especificar por parámetro cantidad de procesos generadores y
@@ -33,7 +33,7 @@ o Tener en la primera fila el nombre de las columnas.\
 o Incluir obligatoriamente el ID como primer campo.\
 o El resto de los campos pueden ser definidos libremente.\
 • No es necesario que los IDs queden ordenados en el CSV; se registran en el orden en que son
-recibidos.\
+recibidos.
 
 
 ### Monitoreo en Linux:
@@ -49,13 +49,13 @@ incorrectos.\
 • Ante la finalización prematura de un proceso, el resto de los procesos deben responder de forma
 controlada, pudiendo continuar su ejecución o bien finalizar dependiendo qué proceso finalizó.\
 • No dejar abiertos recursos en el sistema (semáforos, memorias compartidas, archivos temporales,
-etc.) una vez que finalicen todos los procesos.\
+etc.) una vez que finalicen todos los procesos.
 
 
 ## Ejercicio 2: Cliente-Servidor de Micro Base de Datos con Transacciones
 ### Enunciado:
 Se debe implementar un sistema cliente-servidor que utilice sockets para permitir consultas y
-modificaciones remotas sobre el archivo CSV generado en el Ejercicio 1.\
+modificaciones remotas sobre el archivo CSV generado en el Ejercicio 1.
 
 ### Requisitos:
 
@@ -67,11 +67,10 @@ que el usuario decida salir.\
 • El cliente puede enviar:\
 o Consultas (ej. búsquedas, filtros, etc.).\
 o Modificaciones de datos (alta, baja, modificación).\
-
 o El diseño del protocolo de comunicación y de las operaciones (consultas y DML) queda a
-decisión del grupo.\
+decisión del grupo.
 
-• Transacciones:\
+### • Transacciones:
 
 o El cliente puede iniciar una transacción con BEGIN TRANSACTION.\
 o Mientras tiene la transacción abierta, obtiene un bloqueo (lock) exclusivo sobre el archivo.\
