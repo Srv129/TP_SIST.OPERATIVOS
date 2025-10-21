@@ -12,8 +12,8 @@ de que sea necesario.\
 plataforma MIeL.\
 
 
-### Ejercicios:
-Ejercicio 1: Generador de Datos de Prueba con Procesos y Memoria Compartida\
+## Ejercicios:
+## Ejercicio 1: Generador de Datos de Prueba con Procesos y Memoria Compartida\
 
 ### Enunciado:
 Se debe desarrollar un sistema de generación de datos mediante procesos en paralelo.\
@@ -52,7 +52,7 @@ controlada, pudiendo continuar su ejecución o bien finalizar dependiendo qué p
 etc.) una vez que finalicen todos los procesos.\
 
 
-### Ejercicio 2: Cliente-Servidor de Micro Base de Datos con Transacciones
+## Ejercicio 2: Cliente-Servidor de Micro Base de Datos con Transacciones
 ### Enunciado:
 Se debe implementar un sistema cliente-servidor que utilice sockets para permitir consultas y
 modificaciones remotas sobre el archivo CSV generado en el Ejercicio 1.\
@@ -70,7 +70,9 @@ o Modificaciones de datos (alta, baja, modificación).\
 
 o El diseño del protocolo de comunicación y de las operaciones (consultas y DML) queda a
 decisión del grupo.\
+
 • Transacciones:\
+
 o El cliente puede iniciar una transacción con BEGIN TRANSACTION.\
 o Mientras tiene la transacción abierta, obtiene un bloqueo (lock) exclusivo sobre el archivo.\
 o Puede realizar varias modificaciones de registros.\
@@ -84,7 +86,7 @@ desconectaron.\
 • Debe manejar correctamente cierres inesperados (caídas de clientes o del servidor).\
 • La dirección IP, o nombre de host, y el puerto de escucha se debe poder informar por parámetro o
 archivo de configuración.\
-Monitoreo en Linux:\
+### Monitoreo en Linux:
 • Uso de netstat, lsof, ps, htop para documentar la creación de procesos, threads y la gestión de
 sockets.\
 • Evidenciar concurrencia de clientes y bloqueos por transacciones.\
