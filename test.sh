@@ -1,55 +1,34 @@
 #!/bin/bash
 
-# Nombre del script de verificación AWK
-AWK_SCRIPT="./verificar_ids.awk"
-# Nombre del programa coordinador
-COORDINADOR="./coordinador"
-# Nombre del archivo de salida
-CSV_FILE="datos_prueba.csv"
+# Parámetros de prueba
+GENERADORES=10
+REGISTROS=50000
+EJECUTABLE="generador"
 
-# --- Función para ejecutar una prueba ---
-run_test() {
-    local GENERATORS=$1
-    local TOTAL_RECORDS=$2
+echo "========================================="
+echo "== SCRIPT DE PRUEBA Y VALIDACIÓN =="
+echo "========================================="
 
-    echo "======================================================"
-    echo "CORRIENDO PRUEBA: $GENERATORS generadores | $TOTAL_RECORDS registros"
-    echo "======================================================"
+echo -e "\n[1/4] Compilando el proyecto..."
+make clean > /dev/null
+make
+if [ $? -ne 0 ]; then
+    echo "Error: La compilación falló."
+    exit 1
+fi
+echo "Compilación exitosa."
 
-    # 1. Ejecutar el coordinador
-    if $COORDINADOR $GENERATORS $TOTAL_RECORDS; then
-        echo "Ejecución de $COORDINADOR finalizada con éxito."
-    else
-        echo "ERROR: La ejecución de $COORDINADOR falló. Saltando verificación."
-        return 1
-    fi
+echo -e "\n[2/4] Ejecutando con $GENERADORES procesos y $REGISTROS registros..."
+time ./$EJECUTABLE $GENERADORES $REGISTROS
+if [ $? -ne 0 ]; then
+    echo "Error: La ejecución del programa falló."
+    exit 1
+fi
+echo "Ejecución finalizada."
 
-    # 2. Ejecutar la verificación AWK
-    echo ""
-    echo "--- INICIANDO VERIFICACIÓN AWK ---"
+echo -e "\n[3/4] Validando el archivo de salida..."
+awk -f validate.awk output.csv
 
-    awk -f $AWK_SCRIPT $CSV_FILE
-
-    if [ $? -eq 0 ]; then
-        echo "------------------------------------------------------"
-        echo "PRUEBA [$GENERATORS G | $TOTAL_RECORDS R]: ¡EXITOSA!"
-        echo "------------------------------------------------------"
-    else
-        echo "------------------------------------------------------"
-        echo "PRUEBA [$GENERATORS G | $TOTAL_RECORDS R]: ¡FALLIDA! Verificación AWK falló."
-        echo "------------------------------------------------------"
-    fi
-    echo ""
-}
-
-# --- Ejecutar Múltiples Pruebas ---
-# Prueba Ligera
-run_test 3 100
-
-# Prueba Estándar de Carga Media
-run_test 5 500
-
-# Prueba de Estrés
-run_test 8 2000
-
-echo "TODAS LAS PRUEBAS AUTOMATIZADAS HAN FINALIZADO."
+echo -e "\n========================================="
+echo "== Prueba completada =="
+echo "========================================="
