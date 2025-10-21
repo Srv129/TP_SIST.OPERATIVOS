@@ -9,11 +9,11 @@
 de que sea necesario.\
 • Herramientas utilizadas para validar el monitoreo de los procesos.\
 • Todo lo relacionado a la entrega debe estar en un archivo comprimido ZIP y ser entregado por la
-plataforma MIeL.\
+plataforma MIeL.
 
 
 ## Ejercicios:
-## Ejercicio 1: Generador de Datos de Prueba con Procesos y Memoria Compartida\
+## Ejercicio 1: Generador de Datos de Prueba con Procesos y Memoria Compartida
 
 ### Enunciado:
 Se debe desarrollar un sistema de generación de datos mediante procesos en paralelo.\
